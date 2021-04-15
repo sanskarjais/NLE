@@ -1,0 +1,9 @@
+{% extends 'b.html' %}
+{% block content %}
+
+{% for item in items %}
+    <h2>{{item.apps}} {{item.points}} </h2>
+{% endfor %}
+
+
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends 'b.html' %}
+
+
+{% block content %}
+
+<div>
+    {% if user.is_authenticated %}
+    {% for item in items %}
+        <h2>{{item.name}}</h2>
+        <h3><a href="{% url 'android:add_app' item.id %}">ADD</a> </h3>
+    {% endfor %}
+{% endif %}
+
+</div>
+{% if messages %}
+    {% for message in messages %}
+      <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+{% endif %}
+{% endblock %}
+

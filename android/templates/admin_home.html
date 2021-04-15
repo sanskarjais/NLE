@@ -1,0 +1,14 @@
+{% extends 'b.html' %}
+
+
+{% block content %}
+<div>
+    {% if user.is_superuser %}
+    {% for item in items %}
+        <h2>{{item.name}} {{item.points}}</h2>
+        <h3><a href="{% url 'android:delete' item.id %}">Delete</a> </h3>
+    {% endfor %}
+{% endif %}
+
+</div>
+{% endblock %}
